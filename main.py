@@ -378,6 +378,9 @@ async def account_login(bot: Client, m: Message):
         return          
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
+    if not input.document:
+        await m.reply_text("❌ **Please send a TXT file, not a text message!**")
+        return
     y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
 
