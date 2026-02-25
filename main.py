@@ -91,35 +91,38 @@ async def start_command(bot: Client, message: Message):
 /help <b>to know about all the commonds</b> 📄 <br><br>
 <b>Contact Me</b> [🅱🅴🅰🆂🆃 👑](tg://user?id=2118600611)<b>to Get The Subscription</b> 🎫<br>
 """)
-    await asyncio.sleep(1)
-    await loading_message.edit_text(
-        "Initializing Uploader bot... 🤖\n\n"
-        "Progress: ⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%\n\n"
-    )
+    try:
+        await asyncio.sleep(1)
+        await loading_message.edit_text(
+            "Initializing Uploader bot... 🤖\n\n"
+            "Progress: ⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%\n\n"
+        )
 
-    await asyncio.sleep(1)
-    await loading_message.edit_text(
-        "Loading features... ⏳\n\n"
-        "Progress: 🟥🟥⬜⬜⬜⬜⬜⬜ 25%\n\n"
-    )
-    
-    await asyncio.sleep(1)
-    await loading_message.edit_text(
-        "Thoda wait karlo bhai! 😊\n\n"
-        "Progress: 🟧🟧🟧🟧⬜⬜⬜⬜ 50%\n\n"
-    )
+        await asyncio.sleep(1)
+        await loading_message.edit_text(
+            "Loading features... ⏳\n\n"
+            "Progress: 🟥🟥⬜⬜⬜⬜⬜⬜ 25%\n\n"
+        )
+        
+        await asyncio.sleep(1)
+        await loading_message.edit_text(
+            "Thoda wait karlo bhai! 😊\n\n"
+            "Progress: 🟧🟧🟧🟧⬜⬜⬜⬜ 50%\n\n"
+        )
 
-    await asyncio.sleep(1)
-    await loading_message.edit_text(
-        "Checking Bot Status... 🔍\n\n"
-        "Progress: 🟨🟨🟨🟨🟨🟨⬜⬜ 75%\n\n"
-    )
+        await asyncio.sleep(1)
+        await loading_message.edit_text(
+            "Checking Bot Status... 🔍\n\n"
+            "Progress: 🟨🟨🟨🟨🟨🟨⬜⬜ 75%\n\n"
+        )
 
-    await asyncio.sleep(1)
-    await loading_message.edit_text(
-        "Checking Bot Status... 🔍\n\n"
-        "Progress:🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%\n\n"
-    )
+        await asyncio.sleep(1)
+        await loading_message.edit_text(
+            "Checking Bot Status... 🔍\n\n"
+            "Progress:🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%\n\n"
+        )
+    except Exception:
+        pass
         
     # Send welcome message with buttons
     await bot.send_message(
@@ -130,7 +133,10 @@ async def start_command(bot: Client, message: Message):
     )
 
     # Delete the loading message
-    await loading_message.delete()
+    try:
+        await loading_message.delete()
+    except Exception:
+        pass
 
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
